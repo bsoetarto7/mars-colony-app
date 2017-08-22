@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { AlienService } from '../../services/alien';
+import { EncounterService } from '../../services/encounters';
+
 
 @Component({
   selector: 'app-encounters',
   templateUrl: './encounters.component.html',
   styles: [],
-  providers:[AlienService]
+  providers:[EncounterService]
 })
 export class EncountersComponent implements OnInit {
 
-  constructor(alienService: AlienService) { }
+  constructor(private encounterService: EncounterService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    const encounters = await this.encounterService.getEncounters();
+    console.log(encounters);
   }
 
 }

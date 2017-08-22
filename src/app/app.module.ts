@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
@@ -11,6 +12,7 @@ import { EncountersComponent } from './components/encounters/encounters.componen
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
 import { AppRoutes } from './app.routes';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { AppRoutes } from './app.routes';
     BrowserModule,
     RouterModule,
     RouterModule.forRoot(AppRoutes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
