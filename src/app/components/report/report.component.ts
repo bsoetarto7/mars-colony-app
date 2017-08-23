@@ -18,8 +18,10 @@ export class ReportComponent implements OnInit {
   //   });
   // }
   async ngOnInit() {
+    
     const aliens = await this.alienService.getAliens();
     console.log(aliens);
   }
+  registeringReport(){}
 
 }

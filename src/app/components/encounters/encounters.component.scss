@@ -1,0 +1,16 @@
+.encounter-list{
+  overflow: scroll;
+  height: 400px;
+  ul{
+    margin: 0;
+    padding: 0;
+    li{
+      list-style: none;
+      margin: 40px 0;
+    }
+    li:first-child{
+      margin-top: 0;
+    }
+  }
+  
+}

@@ -1,3 +1,18 @@
-<p>
-  encounters works!
-</p>
+<section class="page container flex-container-no-wrap vertical-align-column">
+  <header class="text-center">
+      <h1>Recent Encounters</h1>
+      <p>See an Alien? Report it!</p>
+  </header>
+  <div class="encounter-list">
+    <ul>
+      <li *ngFor="let encounter of encounters">
+          <p>{{encounter.date}} - {{encounter.atype}}</p>
+          <p>{{encounter.action}}</p>
+      </li>
+    </ul>
+  </div>
+  <div class="text-center">
+      <a routerLink="/report">Report Encounter</a>
+  </div>
+</section>
+
