@@ -1,9 +1,9 @@
-<section class="page container flex-container-no-wrap vertical-align-column">
-  <header class="text-center">
+<section class="page flex-container-no-wrap vertical-align-column-flex-end">
+  <header class="encounter-header text-center">
       <h1>Recent Encounters</h1>
       <p>See an Alien? Report it!</p>
   </header>
-  <div class="encounter-list">
+  <div class="container encounter-list">
     <ul>
       <li *ngFor="let encounter of encounters">
           <p>{{encounter.date}} - {{encounter.atype}}</p>
@@ -11,8 +11,10 @@
       </li>
     </ul>
   </div>
-  <div class="text-center">
-      <a routerLink="/report">Report Encounter</a>
-  </div>
+  <a routerLink="/report">
+    <div class="encounter-link text-center">
+        <p>Report Encounter</p>
+    </div>
+  </a>
 </section>
 
