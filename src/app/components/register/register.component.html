@@ -1,3 +1,14 @@
-<p>
-  register works!
-</p>
+<section class="page flex-container-no-wrap vertical-align-center">
+    <h1>Register</h1>
+    <form [formGroup]="registerForm">
+      <input type="text" formControlName="fullName" placeholder="Full Name">
+    
+      <input type="number" formControlName="age" placeholder="Age">
+    
+      <button type="submit">Check In</button>
+    </form>
+    <select name="mars-job-registration" id="mars-job-registration">
+        <option *ngFor='let job of jobs' value="{{ job.id }}">{{ job.name }}</option>
+    </select>
+</section>
+

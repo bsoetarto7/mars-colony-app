@@ -1,0 +1,7 @@
+.mars-welcome-click{
+  background-color: rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Colonist } from '../models/colonist';
+import { Colonist, NewColonist } from '../models/colonist';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
@@ -9,9 +9,9 @@ export class ColonistService  {
 
   constructor(private http: Http){}
 
-  newColonist(newColonist:Colonist):Promise<Colonist>{
-    let headers = new Headers({'Content-Type': 'application/json'});
-    let body = JSON.stringify({ newColonist });
+  registerColonist(colonist:NewColonist): Promise<Colonist>{
+    const headers = new Headers({'Content-Type': 'application/json'});
+    const body = JSON.stringify({ colonist });
     return this.http.post(this.colonistUrl, body, { headers: headers })
                     .toPromise()
                     .then(response => response.json().colonist)
