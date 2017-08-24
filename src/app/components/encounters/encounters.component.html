@@ -1,15 +1,17 @@
 <section class="page flex-container-no-wrap vertical-align-column-flex-end page-black-background">
-  <header class="encounter-header text-center">
-      <h1>Recent Encounters</h1>
-      <p>See an Alien? Report it!</p>
-  </header>
-  <div class="container encounter-list">
-    <ul>
-      <li *ngFor="let encounter of encounters">
-          <p>{{encounter.date}} - {{encounter.atype}}</p>
-          <p>{{encounter.action}}</p>
-      </li>
-    </ul>
+  <div class="encount-header-list">
+    <header class="encounter-header text-center">
+        <h1>Recent Encounters</h1>
+        <p>See an Alien? Report it!</p>
+    </header>
+    <div class="container encounter-list">
+      <ul>
+        <li *ngFor="let encounter of encounters">
+            <p>{{encounter.date}} - {{encounter.atype}}</p>
+            <p>{{encounter.action}}</p>
+        </li>
+      </ul>
+    </div>
   </div>
   <a routerLink="/report">
     <div class="encounter-link text-center">

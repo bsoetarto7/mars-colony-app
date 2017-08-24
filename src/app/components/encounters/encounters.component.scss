@@ -1,8 +1,11 @@
 p{
   color:white;
 }
+.encount-header-list{
+  height: 85vh;
+}
 .encounter-header{
-  height: 20vh;
+  max-height: 30%;
   h1{
     font-size: 3rem;
     font-weight: 300;
@@ -13,7 +16,7 @@ p{
 }
 .encounter-list{
   overflow: scroll;
-  height: 55vh;
+  max-height: 70%;
   ul{
     margin: 0;
     padding: 0;
@@ -32,11 +35,12 @@ a{
 .encounter-link{
   background-color: black;
   overflow: auto;
-  height: 25vh;
+  height: 15vh;
   display: flex;
   align-items: center;
   justify-content: center;
   p{
     font-size: 2.3rem;
+    margin: 0px;
   }
 }
