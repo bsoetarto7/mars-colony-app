@@ -33,7 +33,6 @@ export class ColonistService  {
   }
   canActivate(){
     if(this.registeredSuccess){
-      this.router.navigate(['encounters']);
       return true;
     }else{
       this.router.navigate(['/']);
