@@ -10,12 +10,12 @@ import { Router } from '@angular/router';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  providers: [JobService, ColonistService]
+  providers: [JobService]
 })
 export class RegisterComponent implements OnInit {
   
   jobs:Job[];
-
+  
   public registerForm = new FormGroup({
     name: new FormControl('',[Validators.required, Validators.maxLength(100), Validators.minLength(2), this.noNumbers(/\d/)]),
     age: new FormControl('',[Validators.required, Validators.max(100), Validators.min(0)]),
@@ -26,14 +26,6 @@ export class RegisterComponent implements OnInit {
 
   async ngOnInit() {
     this.jobs = await this.jobService.getJobs();
-
-    // const fakeColonist = {
-    //   name: 'Hello there',
-    //   age: '25',
-    //   job_id: '2'
-    // };
-    // const newColonist = await this.colonistService.registerColonist(fakeColonist);
-
   }
 
   private noNumbers(validNameRegex): ValidatorFn{
@@ -50,7 +42,6 @@ export class RegisterComponent implements OnInit {
       age: this.registerForm.get('age').value,
       job_id: this.registerForm.get('job_id').value
     }
-    console.log(this.registerForm.controls.name);
     const colonist = await this.colonistService.registerColonist(newColonist);
     this.router.navigate(['encounters']);
   }

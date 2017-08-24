@@ -15,6 +15,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 
 import { AppRoutes } from './app.routes';
 
+import { ColonistService } from './services/colonist';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { AppRoutes } from './app.routes';
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ColonistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
