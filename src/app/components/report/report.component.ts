@@ -44,7 +44,7 @@ export class ReportComponent implements OnInit {
     if( parseInt(mm) < 10 ){
         mm = '0' + mm;
     } 
-    var yyyy = today.getFullYear();
+    let yyyy = today.getFullYear();
     
     const newReport: NewReport = {
       atype : this.reportForm.get('alien_type').value.toString(),
