@@ -16,6 +16,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AppRoutes } from './app.routes';
 
 import { ColonistService } from './services/colonist';
+import { CanActivateViaAuthGuard } from './guard/authguard';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { ColonistService } from './services/colonist';
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [ColonistService],
+  providers: [ColonistService, CanActivateViaAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

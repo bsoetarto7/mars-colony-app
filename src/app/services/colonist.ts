@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Colonist, NewColonist } from '../models/colonist';
 import { Http, Headers } from '@angular/http';
-import { Router } from '@angular/router';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -12,7 +11,7 @@ export class ColonistService  {
 
   registeredSuccess = false;
 
-  constructor(private http: Http, private router:Router){}
+  constructor(private http: Http){}
 
   registerColonist(colonist:NewColonist): Promise<Colonist>{
     const headers = new Headers({'Content-Type': 'application/json'});
@@ -31,14 +30,11 @@ export class ColonistService  {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);
   }
-  canActivate(){
-    if(this.registeredSuccess){
-      return true;
-    }else{
-      this.router.navigate(['/']);
-    }
-    return false;
+
+  isRegistered(){
+    return this.registeredSuccess;
   }
+  
   getRegisteredColonist(){
     console.log(this.storedColonist);
     return this.storedColonist;
