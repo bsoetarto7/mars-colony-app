@@ -36,7 +36,6 @@ export class ColonistService  {
   }
   
   getRegisteredColonist(){
-    console.log(this.storedColonist);
     return this.storedColonist;
   }
 

@@ -1,9 +1,6 @@
 .mars-welcome-click{
-  background-color: rgba(0, 0, 0, 0.2);
-  display: inline-block;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  display: block;
+  position: relative;
 }
 h1{
   color:white;
@@ -15,4 +12,93 @@ p{
   color:white;
   padding: 30px 0;
   font-size: 2rem;
+}
+.planet:after,.star:after {
+  content:"";
+  position:absolute;
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  transform-origin:center;
+  margin:auto;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+.planet,.star{
+  position:absolute;
+}
+#sun {
+  transform-origin:center center;
+  margin:auto;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+#sun:after {
+  transform-origin:center center;
+  background: radial-gradient(circle, #FCFC14, #FF7700);
+  box-shadow: 0px 0px 40px #FF7700;
+  margin:auto;
+  width:70px;
+  height:70px;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+.Orbit {
+  margin:auto;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  position:absolute;
+  border-left: 2px solid white;
+  border-top : 2px solid white;
+  border-right : 2px solid white;
+  border-bottom : 2px solid white;
+  border-radius: 50%;  
+}
+
+#mars {
+  margin:auto;
+  z-index: 10;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  animation:planetMove 20s linear infinite;
+}
+#mars:after {
+  top:200px;
+  left:200px;
+  background: radial-gradient(circle, #FA9911, #69410A);
+}
+
+
+#marsOrbit {
+  width: 290px;
+  height: 290px;
+  animation:spinnerRotate 20s linear infinite;
+	animation:spinnerRotate 20s linear infinite;
+}
+
+
+
+
+
+@keyframes planetMove {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+@keyframes spinnerRotate {
+  0% {transform : rotate(0deg)}
+  100% {transform : rotate(360deg)}
+}
+body {
+  background-color:#222;
 }

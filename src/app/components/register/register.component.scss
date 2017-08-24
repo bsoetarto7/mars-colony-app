@@ -57,4 +57,7 @@ select{
   &:hover{
     cursor: pointer;
   }
+  &:disabled{
+    color:darken(white,60%);
+  }
 }

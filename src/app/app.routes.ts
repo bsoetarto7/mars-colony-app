@@ -8,9 +8,9 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { CanActivateViaAuthGuard } from './guard/authguard';
 
 export const AppRoutes: Routes = [
-  { path: '', component: WelcomeComponent},
-  { path: 'register', component: RegisterComponent},
-  { path: 'encounters', component: EncountersComponent, canActivate: [CanActivateViaAuthGuard]},
-  { path: 'report', component: ReportComponent, canActivate: [CanActivateViaAuthGuard]},
-  { path: '**', component: NotfoundComponent}
+  { path: '', component: WelcomeComponent, data : { state:'welcome' } },
+  { path: 'register', component: RegisterComponent, data : { state:'register' } },
+  { path: 'encounters', component: EncountersComponent, canActivate: [CanActivateViaAuthGuard], data : { state:'encounters' } },
+  { path: 'report', component: ReportComponent, canActivate: [CanActivateViaAuthGuard], data : { state:'report' } },
+  { path: '**', component: NotfoundComponent, data : { state:'notfound' } }
 ]

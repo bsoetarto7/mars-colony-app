@@ -494,8 +494,13 @@ h1,h2,h3,h4,h5,h5,h6{
   overflow: hidden;
 }
 .page-red-background{
-  background: linear-gradient(to bottom, rgba(0,0,0,.8),rgba(237,67,67,.7));
+  // background: linear-gradient(to bottom, rgba(0,0,0,.8),rgba(237,67,67,.7));
+  background-image:  url('http://wallpapercave.com/wp/XiP3qSO.jpg');
+  background-size: cover;
+  background-position: center;
 }
 .page-black-background{
-  background-color: black;
+  background-image:  url('http://wallpapercave.com/wp/XiP3qSO.jpg');
+  background-size: cover;
+  background-position: center;
 }

@@ -26,7 +26,8 @@ export class ReportComponent implements OnInit {
     private alienService: AlienService, 
     private encounterService: EncounterService, 
     private colonistService:ColonistService,
-    private router:Router) { }
+    private router:Router) {
+    }
 
   async ngOnInit() {
     
@@ -46,9 +47,9 @@ export class ReportComponent implements OnInit {
     var yyyy = today.getFullYear();
     
     const newReport: NewReport = {
-      atype : this.reportForm.get('alien_type').value,
+      atype : this.reportForm.get('alien_type').value.toString(),
       date : `${yyyy}-${mm}-${dd}`,
-      action : this.reportForm.get('alienAction').value,
+      action : this.reportForm.get('alienAction').value.toString(),
       colonist_id : this.colonistService.getRegisteredColonist().job.id.toString()
     }
     const report = await this.encounterService.newEncounters(newReport);
