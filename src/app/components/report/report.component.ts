@@ -50,7 +50,7 @@ export class ReportComponent implements OnInit {
       atype : this.reportForm.get('alien_type').value.toString(),
       date : `${yyyy}-${mm}-${dd}`,
       action : this.reportForm.get('alienAction').value.toString(),
-      colonist_id : this.colonistService.getRegisteredColonist().job.id.toString()
+      colonist_id : this.colonistService.getRegisteredColonist().id.toString()
     }
     const report = await this.encounterService.newEncounters(newReport);
     this.router.navigate(['encounters']);
