@@ -12,5 +12,5 @@ export const AppRoutes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'encounters', component: EncountersComponent, canActivate: [ColonistService]},
   { path: 'report', component: ReportComponent, canActivate: [ColonistService]},
-  { path: '**', component: NotfoundComponent, canActivate: [ColonistService]}
+  { path: '**', component: NotfoundComponent}
 ]
