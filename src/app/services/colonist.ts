@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Colonist, NewColonist } from '../models/colonist';
 import { Http, Headers } from '@angular/http';
+import { LocalStorageTest } from '../test/localstoragetest';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -11,7 +12,7 @@ export class ColonistService  {
 
   registeredSuccess = false;
 
-  constructor(private http: Http){}
+  constructor(private http: Http, private localStorageTest:LocalStorageTest){}
 
   registerColonist(colonist:NewColonist): Promise<Colonist>{
     const headers = new Headers({'Content-Type': 'application/json'});
@@ -19,9 +20,13 @@ export class ColonistService  {
     return this.http.post(this.colonistUrl, body, { headers: headers })
                     .toPromise()
                     .then(response => {
-                      this.storedColonist =response.json().colonist;
+                      if(this.localStorageTest.available()){
+                        window.localStorage.setItem('colonist_id', JSON.stringify(response.json().colonist.id));
+                      }else{
+                        this.storedColonist =response.json().colonist;
+                      }
                       this.registeredSuccess = true;
-                      return response.json().colonist
+                      return response.json().colonist;
                     })
                     .catch(this.handleError);
   }

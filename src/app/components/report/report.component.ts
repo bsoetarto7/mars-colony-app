@@ -6,6 +6,7 @@ import { ColonistService } from '../../services/colonist';
 import { NewReport } from '../../models/report';
 import { FormGroup, FormControl, Validators, ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LocalStorageTest } from '../../test/localstoragetest';
 
 @Component({
   selector: 'app-report',
@@ -26,11 +27,11 @@ export class ReportComponent implements OnInit {
     private alienService: AlienService, 
     private encounterService: EncounterService, 
     private colonistService:ColonistService,
-    private router:Router) {
+    private router:Router,
+    private localStorageTest:LocalStorageTest) {
     }
 
   async ngOnInit() {
-    
     this.aliens = await this.alienService.getAliens();
   }
 
@@ -46,11 +47,13 @@ export class ReportComponent implements OnInit {
     } 
     let yyyy = today.getFullYear();
     
+    const colonist_id = this.localStorageTest.available() ? window.localStorage.getItem('colonist_id') : this.colonistService.getRegisteredColonist().id.toString();
+    
     const newReport: NewReport = {
       atype : this.reportForm.get('alien_type').value.toString(),
       date : `${yyyy}-${mm}-${dd}`,
       action : this.reportForm.get('alienAction').value.toString(),
-      colonist_id : this.colonistService.getRegisteredColonist().id.toString()
+      colonist_id : colonist_id
     }
     const report = await this.encounterService.newEncounters(newReport);
     this.router.navigate(['encounters']);

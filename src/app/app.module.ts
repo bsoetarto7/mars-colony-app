@@ -18,6 +18,7 @@ import { AppRoutes } from './app.routes';
 
 import { ColonistService } from './services/colonist';
 import { CanActivateViaAuthGuard } from './guard/authguard';
+import { LocalStorageTest } from './test/localstoragetest';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { CanActivateViaAuthGuard } from './guard/authguard';
     HttpModule,
     BrowserAnimationsModule
   ],
-  providers: [ColonistService, CanActivateViaAuthGuard],
+  providers: [ColonistService, CanActivateViaAuthGuard, LocalStorageTest],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
