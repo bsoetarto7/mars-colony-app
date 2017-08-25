@@ -1,5 +1,6 @@
+@import "../../../sass/theme";
 h1{
-  color:white;
+  color:$color_white;
   padding: 30px 0;
   font-size: 3rem;
   font-weight: 300;
@@ -11,7 +12,7 @@ select{
   background-color: transparent;
   border: none;
   color: red;
-  border-bottom:1px solid white;
+  border-bottom:1px solid $color_white;
   border-radius: 0;
   height: 53px;
   font-size: 1.2rem;
@@ -28,7 +29,7 @@ textarea{
 
 .report-btn{
   background-color: transparent;
-  color: white;
+  color: $color_white;
   font-size: 1.5rem;
   margin-top: 40px;
   border:none;
@@ -37,6 +38,6 @@ textarea{
     cursor: pointer;
   }
   &:disabled{
-    color:darken(white,60%);
+    color:darken($color_white,60%);
   }
 }

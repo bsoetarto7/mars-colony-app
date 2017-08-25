@@ -1,5 +1,6 @@
+@import "../../../sass/theme";
 h1{
-  color:white;
+  color:$color_white;
   padding: 30px 0;
   font-size: 3rem;
   font-weight: 300;
@@ -11,32 +12,32 @@ input{
   padding: 20px 0 10px 10px;
   border:none;
   background-color: transparent;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid $color_white;
   font-size: 1.2rem;
-  color:white;
+  color:$color_white;
 }
 input::-webkit-input-placeholder {
-  color: red !important;
+  color: $color_red !important;
 }
   
 input:-moz-placeholder {
-  color: red !important;  
+  color: $color_red !important;  
 }
   
 input::-moz-placeholder {
-  color: red !important;  
+  color: $color_red !important;  
 }
   
 input:-ms-input-placeholder {  
-  color: red !important;  
+  color: $color_red !important;  
 }
 select{
   width: 100%;
   margin-bottom: 40px;
   background-color: transparent;
   border: none;
-  color: red;
-  border-bottom:1px solid white;
+  color: $color_red;
+  border-bottom:1px solid $color_white;
   border-radius: 0;
   height: 53px;
   font-size: 1.2rem;
@@ -45,11 +46,11 @@ select{
   min-height: 80vh;
 }
 .warning{
-  background: red;
+  background: $color_red;
 }
 .register-btn{
   background-color: transparent;
-  color: white;
+  color: $color_white;
   font-size: 1.5rem;
   margin-top: 40px;
   border:none;
@@ -58,6 +59,6 @@ select{
     cursor: pointer;
   }
   &:disabled{
-    color:darken(white,60%);
+    color:darken($color_white, 60%);
   }
 }
