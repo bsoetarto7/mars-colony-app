@@ -19,6 +19,7 @@ import { AppRoutes } from './app.routes';
 import { ColonistService } from './services/colonist';
 import { CanActivateViaAuthGuard } from './guard/authguard';
 import { LocalStorageTest } from './test/localstoragetest';
+import { BlogComponent } from './components/blog/blog.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { LocalStorageTest } from './test/localstoragetest';
     RegisterComponent,
     ReportComponent,
     EncountersComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
