@@ -32,6 +32,10 @@ p{
 }
 a{
   text-decoration: none;
+  color:$color_yellow;
+  &:hover{
+    color:$color_white;
+  }
 }
 .encounter-link{
   background-color: $color_black;

@@ -1,17 +1,15 @@
-<section class="page page-space-background">
-  <div class="blog-header-list">
+<section class="page page-space-background flex-container-no-wrap vertical-align-column-flex-end">
     <header class="text-center">
         <h1>4th Rock from the Sun</h1>
     </header>
     <div class="container">
       <ul>
         <li *ngFor="let blog of blogs" >
-          <h2>{{ blog.title.rendered }}</h2>
+          <h2><a href="{{ blog.link }}" target="_blank">{{ blog.title.rendered }}</a></h2>
           <div [innerHTML]="blog.content.rendered">
           </div>
         </li>
       </ul>
     </div>
-  </div>
 </section>
 

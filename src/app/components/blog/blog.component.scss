@@ -3,8 +3,14 @@ h1,li,p{
   color: $color_white;
 }
 ul{
-  height: 60vh;
+  height: 70vh;
   overflow-y: scroll;
+  a{
+    color:$color_yellow;
+    &:hover{
+      color:white;
+    }
+  }
   li{
     list-style: none;
     margin-bottom: 60px;
