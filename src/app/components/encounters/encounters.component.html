@@ -5,6 +5,7 @@
         <p>See an Alien? Report it | <a routerLink="/blog">Awesome Blog</a></p>
     </header>
     <div class="container encounter-list">
+      <div class="loader" *ngIf="showLoading"></div>
       <ul>
         <li *ngFor="let encounter of encounters">
             <p>{{encounter.date}} - {{encounter.atype}}</p>

@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   
   jobs:Job[];
+  showLoading = false;
   
   public registerForm = new FormGroup({
     name: new FormControl('',[Validators.required, Validators.maxLength(100), Validators.minLength(2), this.noNumbers(/\d/)]),
@@ -37,12 +38,14 @@ export class RegisterComponent implements OnInit {
 
   async registerColonist(){
     // const newColonist = await this.colonistService.registerColonist(this.registerForm.value);
+    this.showLoading = true;
     const newColonist: NewColonist = {
       name: this.registerForm.get('name').value,
       age: this.registerForm.get('age').value,
       job_id: this.registerForm.get('job_id').value
     }
     const colonist = await this.colonistService.registerColonist(newColonist);
+    this.showLoading = false;
     this.router.navigate(['encounters']);
   }
 

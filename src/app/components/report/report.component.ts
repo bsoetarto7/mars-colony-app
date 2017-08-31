@@ -17,6 +17,7 @@ import { LocalStorageTest } from '../../test/localstoragetest';
 export class ReportComponent implements OnInit {
 
   aliens:Alien[];
+  showLoading = false;
 
   public reportForm = new FormGroup({
     alienAction: new FormControl('',[Validators.required, Validators.maxLength(140), Validators.minLength(2)]),
@@ -36,6 +37,7 @@ export class ReportComponent implements OnInit {
   }
 
   async registeringReport(){
+    this.showLoading = true;
     const today = new Date();
     let dd = today.getDate().toString();
     let mm = String(today.getMonth()+1); 
@@ -56,6 +58,7 @@ export class ReportComponent implements OnInit {
       colonist_id : colonist_id
     }
     const report = await this.encounterService.newEncounters(newReport);
+    this.showLoading = false;
     this.router.navigate(['encounters']);
   }
 

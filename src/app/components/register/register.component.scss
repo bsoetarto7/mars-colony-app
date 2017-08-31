@@ -61,4 +61,11 @@ select{
   &:disabled{
     color:darken($color_white, 60%);
   }
+  .loader{
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    width: 30px;
+    height: 30px;
+    margin: 20px auto 0 auto;
+  }
 }

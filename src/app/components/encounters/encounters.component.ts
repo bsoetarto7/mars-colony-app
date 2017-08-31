@@ -12,11 +12,16 @@ import { Report } from '../../models/report';
 export class EncountersComponent implements OnInit {
   
   encounters: Report[];
+  showLoading = false;
 
   constructor(private encounterService: EncounterService) { }
 
   async ngOnInit() {
+    console.log(this.encounters);
+    this.showLoading = true;
     this.encounters = await this.encounterService.getEncounters();
+    console.log(this.encounters);
+    this.showLoading = false;
   }
 
 }

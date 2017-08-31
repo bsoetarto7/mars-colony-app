@@ -2,8 +2,11 @@
     <header class="text-center">
         <h1>4th Rock from the Sun</h1>
     </header>
-    <div class="container">
+    <div class="container blog-list">
       <ul>
+        <li *ngIf="showLoading">
+            <div class="loader"></div>
+        </li>
         <li *ngFor="let blog of blogs" >
           <h2><a href="{{ blog.link }}" target="_blank">{{ blog.title.rendered }}</a></h2>
           <div [innerHTML]="blog.content.rendered">
